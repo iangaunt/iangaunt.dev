@@ -1,7 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Spline+Sans+Mono:wght@300&display=swap');
-
-/* general */
+/* > variables */
 :root {
     /* neutrals */
     --white: rgb(255, 255, 255);
@@ -16,11 +13,11 @@
     --glaucous: rgb(118, 129, 179); 
 }
 
-::-webkit-scrollbar {
-    width: 0px;   
-    height: 0px;
-}
+/* > fonts */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Spline+Sans+Mono:wght@300&display=swap');
 
+/* general */
 * {
 	font-family: 'Spline Sans Mono', sans-serif; 
 	margin: 0;
@@ -32,6 +29,12 @@ body, html {
 	max-width: 100%;
 	overflow-x: hidden;
 }
+
+::-webkit-scrollbar {
+    width: 0px;   
+    height: 0px;
+}
+
 
 /* utility classes */
 .centered {
@@ -136,6 +139,23 @@ div.textdesc {
 	font-size: 1.4vw; 
 }
 
+/* > text --> pseudo-elements */ 
+.textdesc .centered::before {
+	content: ''; 
+	background: var(--white); 
+
+	position: absolute; 
+	top: -15%; left: 25%;
+	width: 50%; height: 130%; 
+
+	transform: rotate(-6deg);
+	background-size: 5em;
+	background-attachment: fixed;
+    background-position: center;
+
+	box-shadow: 1em 1em var(--violet-blue); 
+}
+
 /* > ids */ 
 .textdesc #highlight {
 	color: var(--violet-blue); 
@@ -149,5 +169,7 @@ div.textdesc {
 
 	.textdesc h1 { font-size: 9vw }
 	.textdesc h2 { font-size: 2.9vw }
+	.textdesc .centered::before { width: 80%; left: 10% }
 }
+
 
