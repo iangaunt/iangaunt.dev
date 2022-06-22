@@ -1,3 +1,7 @@
+/* > fonts */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Spline+Sans+Mono:wght@300&display=swap');
+
 /* > variables */
 :root {
     /* neutrals */
@@ -12,10 +16,6 @@
     --violet-blue: rgb(111, 115, 210);
     --glaucous: rgb(118, 129, 179); 
 }
-
-/* > fonts */
-@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Spline+Sans+Mono:wght@300&display=swap');
 
 /* general */
 * {
@@ -51,6 +51,8 @@ body, html {
 /* topbox */
 div.topbox {
 	margin: auto; 
+	display: inline-block;
+
 	width: 60vw; 
 	height: 100vh; 
 }
@@ -62,18 +64,18 @@ div.topbox {
 
 .topbox h2 {
 	text-align: left; 
-	font-size: 3vw; 
+	font-size: max(3.7vw, 100%); 
 }
 
 .topbox h3 {
 	text-align: left; 
-	font-size: 2vw; 
+	font-size: max(2vw, 90%); 
 }
 
 /* > title */
 #title-f, #title-e {
 	color: var(--gunmetal); 
-	font-size: 7vw; 
+	font-size: max(5vw, 130%); 
 	position: relative; 
 }
 
@@ -131,12 +133,12 @@ div.textdesc {
 
 .textdesc h1 {
 	color: var(--gunmetal); 
-	font-size: 5vw; 
+	font-size: max(6vw, 100%); 
 }
 
 .textdesc h2 {
 	color: var(--black); 
-	font-size: 1.4vw; 
+	font-size: min(3vw, 120%); 
 }
 
 /* > text --> pseudo-elements */ 
@@ -161,15 +163,9 @@ div.textdesc {
 	color: var(--violet-blue); 
 }
 
-@media only screen and (max-width: 600px) {
-	div.topbox { width: 80vw; }
-	#title-f, #title-e { font-size: 9.2vw }
-	.topbox h2 { font-size: 5vw }
-	.topbox h3 { font-size: 3vw }
-
-	.textdesc h1 { font-size: 9vw }
-	.textdesc h2 { font-size: 2.9vw }
-	.textdesc .centered::before { width: 80%; left: 10% }
+@media only screen and (max-width: 800px) {
+	div.topbox { width: 80vw }
+	.textdesc .centered::before { width: 90%; left: 5% }
 }
 
 
