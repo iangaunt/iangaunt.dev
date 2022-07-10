@@ -15,21 +15,11 @@
 
 	<body>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		
-		<!-- topnav: navigation bar for contact + movement -->
-		<div class="topnav animate__animated animate__slideInDown animate__delay-1s">
-			<a id="logo"><b>ig.d()</b></a>
-			<a href="#home">home</a>
-			<a href="#about">about
-			</a>
-			<a href="#code">
-				code
-			</a>
-		</div>
 
 		<script>
 			function generateIcons(iconMap, id, classToAdd) {
 				for (var ins in iconMap) {
+
 					// Instantialize new elements 
 					let item = document.createElement("a"); let img = document.createElement("img");
 
@@ -68,7 +58,43 @@
 
 				t();
 			}
+
+			function styleMode() {
+				// Get current stylistic setting
+				let currentMode = document.getElementById("mode-toggle").innerText; 
+
+				// Differences in theme styles, which will be referenced to change colors
+				let themeColors = {
+					"--white" : ["rgb(255, 255, 255)", "rgb(38, 40, 48)"],
+					"--black" : ["rgb(4, 4, 3)", "rgb(255, 255, 255)"],
+					"--gunmetal" : ["rgb(41, 47, 54)", "rgb(214, 207, 201)"],
+					"--black-tns" : ["rgba(4, 4, 3, 0.3)", "rgba(251, 251, 252, 0.3)"]
+				}
+				
+				if (currentMode == "light") {
+					document.getElementById("mode-toggle").innerText = "dark"; 
+					document.getElementById("textdesc-bg").style.backgroundColor = "rgb(0, 0, 0, 0)"; 
+				} else {
+					document.getElementById("mode-toggle").innerText = "light"; 
+					document.getElementById("textdesc-bg").style.backgroundColor = "var(--sky-blue)"; 
+				}
+
+				for (var ins in themeColors) {
+					var sel = (currentMode == "light" ? 1 : 0);
+					document.documentElement.style.setProperty(ins, themeColors[ins][sel]);
+				}
+			} 
 		</script>
+
+		<!-- topnav: navigation bar for contact + movement -->
+		<div class="topnav animate__animated animate__slideInDown animate__delay-1s">
+			<a id="logo"><b>ig.d()</b></a>
+			<a href="#home">home</a>
+			<a href="#about">about</a>
+			<a href="#code">code</a>
+
+			<button onclick="styleMode()" id="mode-toggle" class="mode-toggle">light</button>
+		</div>
 
 		<!-- topbox: introduction to site -->
 		<div class="topbox" id="home">
@@ -91,7 +117,7 @@
 
 		<!-- textdesc: small descriptive blurb -->
 		<div class="textdesc" id="about">
-			<div class="bg">
+			<div id="textdesc-bg" class="bg">
 				<div class="centered">
 					<h1>→ hi!</h1>
 					<h2>
@@ -118,7 +144,7 @@
 		<div class="programming" id="code">
 			<div class="centered programming-wrapper">
 				<h1 class="programming-title">
-					<span id="title-programming-f"></span><span id="title-programming-e" style="color: var(--violet-blue)"></span>
+					<span id="title-programming-f"></span><span id="title-programming-e"></span>
 				</h1>
 				<script>
 					// Bool to prevent infinite text addition
