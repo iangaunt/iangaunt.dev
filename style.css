@@ -15,6 +15,16 @@
     --sky-blue: rgb(131, 201, 244);
     --violet-blue: rgb(111, 115, 210);
     --glaucous: rgb(118, 129, 179); 
+
+	/* transparent colors */
+	--glaucous-tns: rgba(118, 129, 179, 0.3); 
+}
+
+/* > animations */
+@keyframes topbox-pulse {
+	0% {color: var(--sky-blue);}
+	50% {color: var(--violet-blue);}
+	100% {color: var(--gunmetal);}
 }
 
 /* general */
@@ -30,11 +40,14 @@ body, html {
 	overflow-x: hidden;
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 ::-webkit-scrollbar {
     width: 0px;   
     height: 0px;
 }
-
 
 /* utility classes */
 .centered {
@@ -48,51 +61,88 @@ body, html {
 	-o-transform: translateY(-50%); 
 }
 
+/* topnav */
+.topnav {
+	background-color: rgb(255, 255, 255);
+	border-bottom: 1px solid var(--glaucous); 
+	box-shadow: 0px 10px 20px var(--glaucous-tns);
+
+	overflow: hidden;
+	position: fixed; z-index: 10000;
+	width: 100%;
+}
+
+.topnav a {
+	color: var(--glaucous);	font-size: 20px;
+	text-decoration: none; text-align: center;
+
+	padding: 15px 20px;
+	float: left;
+	transition-duration: 0.3s;
+}
+
+.topnav a:hover {
+	color: var(--baby-blue);
+}
+
+.topnav #logo {
+	color: var(--violet-blue);
+	font-size: 20px; 
+	animation: topbox-pulse 5s ease-in-out 0s infinite alternate
+}
+
 /* topbox */
 div.topbox {
 	margin: auto; 
 	display: inline-block;
 
-	width: 60vw; 
+	min-width: 55vw; 
 	height: 100vh; 
 }
 
-/* > top */
+/* > topbox --> text */
 .topbox h1, .topbox h2, .topbox h3 {
 	color: var(--black); 
+	position: relative;
+	white-space: nowrap;
+}
+
+.topbox h1 {
+	font-size: max(7vw, 115%); 
 }
 
 .topbox h2 {
 	text-align: left; 
+	left: 10%; 
 	font-size: max(3.7vw, 100%); 
 }
 
 .topbox h3 {
-	text-align: left; 
+	text-align: left;
+	right: 5%;  
 	font-size: max(2vw, 90%); 
 }
 
-/* > title */
-#title-f, #title-e {
+/* > topbox --> text --> ids */
+#title-topbox-f, #title-topbox-e {
 	color: var(--gunmetal); 
-	font-size: max(5vw, 130%); 
+	font-size: max(5vw, 120%); 
 	position: relative; 
 }
 
-#title-e, .topbox #highlight {
+#title-topbox-e, .topbox #highlight {
 	color: var(--sky-blue); 
-	transition-property: color; 
-
-	-webkit-transition-duration: 0.2s;
-	transition-duration: 0.2s;
-}
- 
-/* > title --> effects */
-#title-e:hover {
-	color: var(--violet-blue); 
 }
 
-/* > title --> pseudo-elements */
+#title-topbox-e {
+	animation: topbox-pulse 9.4s ease-in-out 0s infinite alternate
+}
+
+.topbox #highlight {
+	animation: topbox-pulse 6.5s ease-in-out 0s infinite alternate
+}
+
+/* > topbox --> text --> pseudo-elements */
 #title-f::before, #title-e::before {
 	pointer-events: none; 
 
@@ -114,7 +164,7 @@ div.topbox {
 
 /* textdesc */
 div.textdesc { 
-	height: 60vh;
+	height: 70vh;
 	background-color: transparent;
 	overflow: hidden; 
 }
@@ -124,16 +174,17 @@ div.textdesc {
 	background-color: var(--sky-blue);
 	transform: rotate(5deg); 
 	overflow: hidden;  
+	background-image: url(assets/textdesc-background.svg);
 }
 
-/* > text */
+/* > textdesc --> text */
 .textdesc h1, .textdesc h2 {
 	transform: rotate(-5deg);
 }
 
 .textdesc h1 {
 	color: var(--gunmetal); 
-	font-size: max(6vw, 100%); 
+	font-size: 7vw; 
 }
 
 .textdesc h2 {
@@ -141,14 +192,14 @@ div.textdesc {
 	font-size: min(3vw, 120%); 
 }
 
-/* > text --> pseudo-elements */ 
+/* > textdesc --> text --> pseudo-elements */ 
 .textdesc .centered::before {
 	content: ''; 
 	background: var(--white); 
 
 	position: absolute; 
-	top: -15%; left: 25%;
-	width: 50%; height: 130%; 
+	top: -17.5%; left: 20%;
+	width: 60%; height: 135%; 
 
 	transform: rotate(-6deg);
 	background-size: 5em;
@@ -158,14 +209,46 @@ div.textdesc {
 	box-shadow: 1em 1em var(--violet-blue); 
 }
 
-/* > ids */ 
+/* > textdesc --> text --> ids */ 
 .textdesc #highlight {
 	color: var(--violet-blue); 
 }
 
-@media only screen and (max-width: 800px) {
-	div.topbox { width: 80vw }
-	.textdesc .centered::before { width: 90%; left: 5% }
+/* programming */
+div.programming {
+	height: 60vh; 
+}
+
+.programming .logo {
+    width: clamp(90px, 95px, 100px); 
+    height: clamp(90px, 95px, 100px);  
+
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+
+    filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.3));
+}
+
+/* programming --> effects */ 
+.programming .logo:hover { 
+    transform: scale(1.1);
+    filter: drop-shadow(3px 5px 6px rgba(0, 0, 0, 0.5));
+}
+
+/* programming --> text */
+.programming h1 {
+	font-size: max(4vw, 240%);
+}
+
+.programming h2 {
+	color: var(--gunmetal);
+	font-size: max(1.2vw, 105%);
 }
 
 
+@media only screen and (max-width: 1000px) {
+	.textdesc .centered::before {
+		width: 110%; left: -5%;
+	}
+}
