@@ -58,32 +58,6 @@
 
 				t();
 			}
-
-			function styleMode() {
-				// Get current stylistic setting
-				let currentMode = document.getElementById("mode-toggle").innerText; 
-
-				// Differences in theme styles, which will be referenced to change colors
-				let themeColors = {
-					"--white" : ["rgb(255, 255, 255)", "rgb(38, 40, 48)"],
-					"--black" : ["rgb(4, 4, 3)", "rgb(255, 255, 255)"],
-					"--gunmetal" : ["rgb(41, 47, 54)", "rgb(214, 207, 201)"],
-					"--black-tns" : ["rgba(4, 4, 3, 0.3)", "rgba(251, 251, 252, 0.3)"]
-				}
-				
-				if (currentMode == "light") {
-					document.getElementById("mode-toggle").innerText = "dark"; 
-					document.getElementById("textdesc-bg").style.backgroundColor = "rgb(0, 0, 0, 0)"; 
-				} else {
-					document.getElementById("mode-toggle").innerText = "light"; 
-					document.getElementById("textdesc-bg").style.backgroundColor = "var(--sky-blue)"; 
-				}
-
-				for (var ins in themeColors) {
-					var sel = (currentMode == "light" ? 1 : 0);
-					document.documentElement.style.setProperty(ins, themeColors[ins][sel]);
-				}
-			} 
 		</script>
 
 		<!-- topnav: navigation bar for contact + movement -->
@@ -197,6 +171,41 @@
 					</script>
 				</div>
 			</div>
+
+			<script>
+				function styleMode() {
+					// Get current stylistic setting
+					let currentMode = document.getElementById("mode-toggle").innerText; 
+
+					// Differences in theme styles, which will be referenced to change colors
+					let themeColors = {
+						"--white" : ["rgb(255, 255, 255)", "rgb(38, 40, 48)"],
+						"--black" : ["rgb(4, 4, 3)", "rgb(255, 255, 255)"],
+						"--gunmetal" : ["rgb(41, 47, 54)", "rgb(214, 207, 201)"],
+						"--black-tns" : ["rgba(4, 4, 3, 0.3)", "rgba(251, 251, 252, 0.3)"]
+					}
+					
+					// Adjustments to style of individual objects
+					document.getElementById("mode-toggle").innerText = (currentMode == "light" ? "dark" : "light");
+					document.getElementById("textdesc-bg").style.backgroundColor = (currentMode == "light" ? "rgb(0, 0, 0, 0)" : "var(--sky-blue)"); 
+				
+					// 
+					for (var ins in themeColors) {
+						var sel = (currentMode == "light" ? 1 : 0);
+						document.documentElement.style.setProperty(ins, themeColors[ins][sel]);
+					}
+
+					localStorage.setItem("theme", document.getElementById("mode-toggle").innerText)
+				} 
+
+				function initTheme() {
+					let storedTheme = localStorage.getItem("theme");
+					document.getElementById("mode-toggle").innerText = storedTheme; 
+					styleMode(); 
+				};
+
+				initTheme(); 
+			</script>
 
 		</div>
 	</body>
