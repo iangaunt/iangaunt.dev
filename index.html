@@ -15,35 +15,163 @@
 
 	<body>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<!-- topnav: navigation bar for contact + movement -->
+		<div class="topnav animate__animated animate__slideInDown animate__delay-1s">
+			<a id="logo"><b>ig.d()</b></a>
+			<a href="#home">home</a>
+			<a href="#about">about
+			</a>
+			<a href="#code">
+				code
+			</a>
+		</div>
+
+		<script>
+			function generateIcons(iconMap, id, classToAdd) {
+				for (var ins in iconMap) {
+					// Instantialize new elements 
+					let item = document.createElement("a"); let img = document.createElement("img");
+
+					// Apply new properties to elements
+					item.target = "_blank"; item.rel = "noopener noreferrer";
+					item.href = iconMap[ins]; img.src = "assets/logos/" + ins + ".svg";
+					item.appendChild(img); 
+
+                    if (classToAdd) {
+                        img.classList.add(classToAdd);
+                    }
+
+					// Add to logo container
+					document.getElementById(id).appendChild(item); 
+				}
+			}
+
+			function typeWriter(title, shiftIndex, target, newTarget) {
+				let i = 0
+
+				// Iterate through text with random timing
+				function t() {
+					if (i < title.length) {
+
+						// Move text to #title-e after "iangaunt"
+						if (i > shiftIndex) {
+							target = newTarget; 
+						}
+
+						// Add to text content, and then pause + iterate
+						document.getElementById("title-" + target).innerHTML += title.charAt(i);
+						setTimeout(t, (Math.floor(Math.random() * 10) + 1) * 23);
+						i++;
+					}
+				}
+
+				t();
+			}
+		</script>
 
 		<!-- topbox: introduction to site -->
-		<div class="topbox">
+		<div class="topbox" id="home">
 			<div class="centered">
-				<h2>&nbsp; &nbsp; <span id="highlight">hi</span>, i'm</h2>
-				<h1><span id="title-f">iangaunt</span><span id="title-e">.dev()</span></h1>
-				<h3>&nbsp; a <i>full stack</i> & aspiring game developer</h3>
+				<h2>
+					<span id="highlight">hi</span>, i'm
+				</h2>
+				<h1>
+					<span id="title-topbox-f"></span><span id="title-topbox-e"></span>
+				</h1>
+				<h3 class="animate__animated">
+					a <i>full stack</i> & aspiring game developer
+				</h3>
+
+				<script>
+					typeWriter("iangaunt.dev()", 7, "topbox-f", "topbox-e"); 
+				</script>
 			</div>
 		</div>
 
 		<!-- textdesc: small descriptive blurb -->
-		<div class="textdesc">
+		<div class="textdesc" id="about">
 			<div class="bg">
+				<div class="centered">
+					<h1>→ hi!</h1>
+					<h2>
+						i'm <span id="highlight">ian gaunt</span>, a software developer
+						<br>from the east and west coast.
+					</h2>
 
-			<div class="centered">
-				<h1>→ hi!</h1>
-				<h2>
-					i'm <span id="highlight">ian gaunt</span>, a software developer
-					<br>from the east and west coast.
-				</h2>
+					<h2>
+						<br>i'm a big fan of making code do a thing.
+						<br>i also like music, architecture, graphic
+						<br>design, and sour stuff. 
+					</h2>
 
-				<h2>
-					<br>i'm a big fan of making code do a thing.
-					<br>i also like music, architecture, graphic
-					<br>design, and sour stuff. 
-				</h2>
+					<h2>
+						<br>web development has always been interesting
+						<br>to me. having your code display a personal
+						<br>output makes me feel more proud of my results!
+					</h2>
+				</div>
 			</div>
 		</div>
 
+		
+		<div class="programming" id="code">
+			<div class="centered programming-wrapper">
+				<h1 class="programming-title">
+					<span id="title-programming-f"></span><span id="title-programming-e" style="color: var(--violet-blue)"></span>
+				</h1>
+				<script>
+					// Bool to prevent infinite text addition
+					let checked = false
 
+					// Check to see if smiling icon is on screen
+					const observer = new IntersectionObserver(entries => {
+						entries.forEach(entry => {
+							let title = entry.target.querySelector(".programming-title")
+							
+							// If it is, play animation
+							if (entry.isIntersecting && !checked) {
+								checked = true; 
+								typeWriter("i program.", 1, "programming-f", "programming-e");
+								return; 
+							}
+						});
+					});
+
+					observer.observe(document.querySelector('.programming-wrapper'));
+				</script>
+
+				<h2>
+					<br>i've been programming for around five
+					<br>years in seven different languages.
+					<br>i've also worked on a variety of projects
+					<br>for school and other activites.
+				</h2>
+				<br>
+
+				<div id="logo-cont">
+					<script>
+						let lgMapTop = {
+							"lua": "https://www.lua.org/",
+							"java": "https://www.java.com/",
+							"html": "https://en.wikipedia.org/wiki/HTML",
+							"css": "https://en.wikipedia.org/wiki/CSS"
+						};
+						let lgMapBottom = {
+							"js": "https://www.javascript.com/",
+							"python": "https://www.python.org/",
+							"kotlin": "https://www.kotlinlang.org"
+						}
+
+						generateIcons(lgMapTop, "logo-cont", "logo"); 
+					</script>
+						<br>
+					<script>
+						generateIcons(lgMapBottom, "logo-cont", "logo"); 
+					</script>
+				</div>
+			</div>
+
+		</div>
 	</body>
 </html>
