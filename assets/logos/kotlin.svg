@@ -1,0 +1,21 @@
+<!-- Kotlin -->
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img"
+    id="footer-sample-full" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32"
+    class="iconify iconify--vscode-icons">
+    <defs>
+        <linearGradient id="footer-sample-full-0" x1="73.714" x2="105.452" y1="910.226" y2="878.134"
+            gradientTransform="matrix(.893 0 0 .893 -64.139 -782.556)" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="rgba(118, 129, 179, 0.3)"></stop>
+            <stop offset="1" stop-color="rgba(118, 129, 179, 0.3)"></stop>
+        </linearGradient>
+        <linearGradient id="footer-sample-full-1" x1="69.813" x2="102.279" y1="905.226" y2="875.745"
+            gradientTransform="matrix(.893 0 0 .893 -64.139 -782.556)" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="rgba(41, 47, 54, 0.3)"></stop>
+            <stop offset="1" stop-color="rgba(118, 129, 179, 0.3)"></stop>
+        </linearGradient>
+    </defs>
+    <path fill="url(#footer-sample-full-0)" d="M2 2v28h28v-.047l-6.95-7l-6.95-7.007l6.95-7.012L29.938 2Z"></path>
+    <path fill="url(#footer-sample-full-1)"
+        d="M16.318 2L2 16.318V30h.124l14.008-14.008l-.031-.031L23.05 8.95L29.938 2Z"></path>
+</svg>
