@@ -225,7 +225,7 @@ div.programming {
 /* programming --> effects */ 
 .programming .logo:hover { 
     transform: scale(1.1);
-    filter: drop-shadow(3px 5px 6px rgba(0, 0, 0, 0.5));
+    filter: drop-shadow(3px 5px 6px var(--black-tns));
 }
 
 /* programming --> text */

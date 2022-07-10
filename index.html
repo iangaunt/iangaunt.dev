@@ -67,7 +67,7 @@
 			<a href="#about">about</a>
 			<a href="#code">code</a>
 
-			<button onclick="styleMode()" id="mode-toggle" class="mode-toggle">light</button>
+			<button onclick="styleMode()" id="mode-toggle" class="mode-toggle"></button>
 		</div>
 
 		<!-- topbox: introduction to site -->
@@ -184,27 +184,25 @@
 						"--gunmetal" : ["rgb(41, 47, 54)", "rgb(214, 207, 201)"],
 						"--black-tns" : ["rgba(4, 4, 3, 0.3)", "rgba(251, 251, 252, 0.3)"]
 					}
-					
-					// Adjustments to style of individual objects
+
+					// Apply individual color changes
 					document.getElementById("mode-toggle").innerText = (currentMode == "light" ? "dark" : "light");
 					document.getElementById("textdesc-bg").style.backgroundColor = (currentMode == "light" ? "rgb(0, 0, 0, 0)" : "var(--sky-blue)"); 
 				
-					// 
 					for (var ins in themeColors) {
 						var sel = (currentMode == "light" ? 1 : 0);
 						document.documentElement.style.setProperty(ins, themeColors[ins][sel]);
 					}
-
-					localStorage.setItem("theme", document.getElementById("mode-toggle").innerText)
+					localStorage.setItem("theme", (document.getElementById("mode-toggle").innerText == "light" ? "dark" : "light"));
 				} 
 
 				function initTheme() {
 					let storedTheme = localStorage.getItem("theme");
 					document.getElementById("mode-toggle").innerText = storedTheme; 
 					styleMode(); 
-				};
-
-				initTheme(); 
+				}; 
+				
+				initTheme();
 			</script>
 
 		</div>
