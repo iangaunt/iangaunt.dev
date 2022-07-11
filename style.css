@@ -85,11 +85,14 @@ html {
 
 	padding: 15px 20px;
 	float: left;
+
+	transition-property: background-color, color; 
 	transition-duration: 0.3s;
 }
 
 .topnav .mode-toggle {
 	float: right; 
+	top: 0px; 
 	background: none; border: none; 
 }
 
@@ -184,7 +187,7 @@ div.textdesc {
 	font-size: min(3vw, 120%); 
 }
 
-/* > textdesc --> text --> pseudo-elements */ 
+/* > textdesc --> text --> pseudo-eleme\nts */ 
 .textdesc .centered::before {
 	content: ''; 
 	background: var(--white); 
@@ -247,14 +250,35 @@ div.programming {
 	color: var(--violet-blue); 
 }
 
+/* dark mode transition effects */
+body, html, div.topnav {
+	transition-property: background-color;
+	transition-duration: 0.2s;
+}
+
+/* @media */
 @media only screen and (max-width: 1000px) {
 	.textdesc .centered::before {
 		width: 110%; left: -5%;
 	}
 }
 
-/* dark mode transition effects */
-body, html, div.topnav {
-	transition-property: background-color;
-	transition-duration: 0.2s;
+@media only screen and (max-width: 500px) {
+	.topnav a, .topnav button, .topnav #logo {
+		font-size: 3.2vw; 
+		padding: 2vw; 
+	}
+
+	.programming h1 {
+		font-size: 8vw; 
+	}
+
+	.programming h2 {
+		font-size: 3.6vw; 
+	}
+	
+	.programming .logo {
+		width: 13vw;
+		height: 13vw; 
+	}
 }
