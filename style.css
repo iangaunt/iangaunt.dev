@@ -170,6 +170,9 @@ div.textdesc {
 	transform: rotate(5deg); 
 	overflow: hidden;  
 	background-image: url(assets/textdesc-background.svg);
+
+	transition-duration: 0.2s;
+	transition-property: background-color; 
 }
 
 /* > textdesc --> text */
@@ -220,7 +223,7 @@ div.programming {
 
     transition-duration: 0.3s;
     -webkit-transition-property: transform;
-    transition-property: transform;
+	transition-property: transform;
 
     filter: drop-shadow(3px 5px 2px var(--black-tns));
 }

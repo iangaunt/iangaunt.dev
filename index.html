@@ -11,6 +11,9 @@
 
 		<!-- animate.css -->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+		<!-- mousetrap -->
+		<script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
 	</head>
 
 	<body>
@@ -114,7 +117,7 @@
 			</div>
 		</div>
 
-		
+		<!-- programming: coding description -->
 		<div class="programming" id="code">
 			<div class="centered programming-wrapper">
 				<h1 class="programming-title">
@@ -205,6 +208,11 @@
 				initTheme();
 			</script>
 
+			<script>
+				Mousetrap.bind("shift+l", function(e) {
+					styleMode(); 
+				});
+			</script>
 		</div>
 	</body>
 </html>
