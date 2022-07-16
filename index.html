@@ -9,6 +9,9 @@
 		<link rel="stylesheet" href="style.css">
 		<link rel="icon" type="image/x-icon" href="assets/icon.svg">
 
+		<!-- js effects -->
+		<script src="script.js"></script>
+
 		<!-- animate.css -->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
@@ -18,50 +21,6 @@
 
 	<body>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-		<script>
-			function generateIcons(iconMap, id, classToAdd) {
-				for (var ins in iconMap) {
-
-					// Instantialize new elements 
-					let item = document.createElement("a"); let img = document.createElement("img");
-
-					// Apply new properties to elements
-					item.target = "_blank"; item.rel = "noopener noreferrer";
-					item.href = iconMap[ins]; img.src = "assets/logos/" + ins + ".svg";
-					item.appendChild(img); 
-
-                    if (classToAdd) {
-                        img.classList.add(classToAdd);
-                    }
-
-					// Add to logo container
-					document.getElementById(id).appendChild(item); 
-				}
-			}
-
-			function typeWriter(title, shiftIndex, target, newTarget) {
-				let i = 0
-
-				// Iterate through text with random timing
-				function t() {
-					if (i < title.length) {
-
-						// Move text to #title-e after "iangaunt"
-						if (i > shiftIndex) {
-							target = newTarget; 
-						}
-
-						// Add to text content, and then pause + iterate
-						document.getElementById("title-" + target).innerHTML += title.charAt(i);
-						setTimeout(t, (Math.floor(Math.random() * 10) + 1) * 23);
-						i++;
-					}
-				}
-
-				t();
-			}
-		</script>
 
 		<!-- topnav: navigation bar for contact + movement -->
 		<div class="topnav animate__animated animate__slideInDown animate__delay-1s">
@@ -117,102 +76,109 @@
 			</div>
 		</div>
 
-		<!-- programming: coding description -->
+		<!-- programming: interest and expertise -->
 		<div class="programming" id="code">
-			<div class="centered programming-wrapper">
-				<h1 class="programming-title">
-					<span id="title-programming-f"></span><span id="title-programming-e"></span>
-				</h1>
-				<script>
-					// Bool to prevent infinite text addition
-					let checked = false
+			<div class="p-block p-block-l">
+				<div class="centered">
+					<h1 class="programming-title">
+						<span id="title-programming-f"></span><span id="title-programming-e"></span>
+					</h1>
+					<script>
+						// Bool to prevent infinite text addition
+						let checked = false
 
-					// Check to see if smiling icon is on screen
-					const observer = new IntersectionObserver(entries => {
-						entries.forEach(entry => {
-							let title = entry.target.querySelector(".programming-title")
-							
-							// If it is, play animation
-							if (entry.isIntersecting && !checked) {
-								checked = true; 
-								typeWriter("i program.", 1, "programming-f", "programming-e");
-								return; 
-							}
+						// Check to see if smiling icon is on screen
+						const observer = new IntersectionObserver(entries => {
+							entries.forEach(entry => {
+								let title = entry.target.querySelector(".programming-title")
+								
+								// If it is, play animation
+								if (entry.isIntersecting && !checked) {
+									checked = true; 
+									typeWriter("i program.", 1, "programming-f", "programming-e");
+									return; 
+								}
+							});
 						});
-					});
 
-					observer.observe(document.querySelector('.programming-wrapper'));
-				</script>
-
-				<h2>
-					<br>i've been programming for around five
-					<br>years in seven different languages.
-					<br>i've also worked on a variety of projects
-					<br>for school and other activites.
-				</h2>
-				<br>
-
-				<div id="logo-cont">
-					<script>
-						let lgMapTop = {
-							"lua": "https://www.lua.org/",
-							"java": "https://www.java.com/",
-							"html": "https://en.wikipedia.org/wiki/HTML",
-							"css": "https://en.wikipedia.org/wiki/CSS"
-						};
-						let lgMapBottom = {
-							"js": "https://www.javascript.com/",
-							"python": "https://www.python.org/",
-							"kotlin": "https://www.kotlinlang.org"
-						}
-
-						generateIcons(lgMapTop, "logo-cont", "logo"); 
+						observer.observe(document.querySelector('.programming'));
 					</script>
-						<br>
-					<script>
-						generateIcons(lgMapBottom, "logo-cont", "logo"); 
-					</script>
+
+					<h2>
+						<br>i've been programming for around five
+						<br>years in seven different languages.
+						<br>i've also worked on a variety of projects
+						<br>for school and other activites.
+					</h2>
+					<br>
+
+					<div id="logo-cont">
+						<script>
+							let lgMapTop = {
+								"lua": "https://www.lua.org/",
+								"java": "https://www.java.com/",
+								"html": "https://en.wikipedia.org/wiki/HTML",
+								"css": "https://en.wikipedia.org/wiki/CSS"
+							};
+							let lgMapBottom = {
+								"js": "https://www.javascript.com/",
+								"python": "https://www.python.org/",
+								"kotlin": "https://www.kotlinlang.org"
+							}
+
+							generateIcons(lgMapTop, "logo-cont", "logo"); 
+						</script>
+							<br>
+						<script>
+							generateIcons(lgMapBottom, "logo-cont", "logo"); 
+						</script>
+					</div>
 				</div>
 			</div>
 
-			<script>
-				function styleMode() {
-					// Get current stylistic setting
-					let currentMode = document.getElementById("mode-toggle").innerText; 
+			<div class="p-block p-block-r">
+				<div class="centered">
+					<h1 class="title">
+						projects
+					</h1>
+					<h2>some of my work.</h2>
+					
+					<a href="https://github.com/i9nn" target="_blank" rel="noopener noreferrer">
+						<i><b>my github.<b></b></i>
+					</a>
 
-					// Differences in theme styles, which will be referenced to change colors
-					let themeColors = {
-						"--white" : ["rgb(255, 255, 255)", "rgb(38, 40, 48)"],
-						"--black" : ["rgb(4, 4, 3)", "rgb(255, 255, 255)"],
-						"--gunmetal" : ["rgb(41, 47, 54)", "rgb(214, 207, 201)"],
-						"--black-tns" : ["rgba(4, 4, 3, 0.3)", "rgba(251, 251, 252, 0.3)"]
-					}
+					<br><br>
 
-					// Apply individual color changes
-					document.getElementById("mode-toggle").innerText = (currentMode == "light" ? "dark" : "light");
-					document.getElementById("textdesc-bg").style.backgroundColor = (currentMode == "light" ? "rgb(0, 0, 0, 0)" : "var(--sky-blue)"); 
-				
-					for (var ins in themeColors) {
-						var sel = (currentMode == "light" ? 1 : 0);
-						document.documentElement.style.setProperty(ins, themeColors[ins][sel]);
-					}
-					localStorage.setItem("theme", (document.getElementById("mode-toggle").innerText == "light" ? "dark" : "light"));
-				} 
+					<div class="proj">
+						<h3 class="centered">
+							i9nn.com - <span style="color: #e34c26">●</span> HTML & <span style="color: #563d7c">●</span> CSS 
+							<br><i>Another website of mine.</i> 
+						</h3> 
+					</div>
+					<div class="proj">
+						<h3 class="centered">
+							lazuli - <span style="color: #f1e05a">●</span> JSON
+							<br><i>My VSCode color theme.</i>
+						</h3> 
+					</div>
+					<div class="proj">
+						<h3 class="centered">
+							oa2code - <span style="color: #000080">●</span> Lua
+							<br><i>An old video game project.</i> 
+						</h3> 
+					</div>
 
-				function initTheme() {
-					let storedTheme = localStorage.getItem("theme");
-					document.getElementById("mode-toggle").innerText = storedTheme; 
-					styleMode(); 
-				}; 
-				
-				initTheme();
-			</script>
-
-			<script>
-				Mousetrap.bind("shift+l", function(e) {
-					styleMode(); 
-				});
-			</script>
+					<h3><i>... and this website!</i></h3>
+				</div>
+			</div>
 		</div>
+
+		<!-- final web loading -->
+		<script>
+			initTheme();
+			Mousetrap.bind("shift+l", function(e) {
+				styleMode(); 
+			});
+		</script>
 	</body>
 </html>

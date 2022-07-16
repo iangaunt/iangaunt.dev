@@ -215,9 +215,20 @@ div.textdesc {
 /* programming */
 div.programming {
 	height: 60vh; 
+	position: absolute; 
+	left: 20%; 
+	height: 60vh; 
+	width: 60%
 }
 
-.programming .logo {
+/* programming --> classes */
+.p-block-l, .p-block-r {
+	width: 50%; 
+	height: 100%; 
+	float: left
+}
+
+.p-block-l .logo {
     width: clamp(90px, 95px, 100px); 
     height: clamp(90px, 95px, 100px);  
 
@@ -228,6 +239,30 @@ div.programming {
     filter: drop-shadow(3px 5px 2px var(--black-tns));
 }
 
+.p-block-r {
+	overflow-x: hidden; 
+}
+
+.p-block-r .proj {
+	margin-bottom: 5px;
+
+	width: 80%; height: 4vw;
+	left: 10%;
+	position: relative; 
+
+	border-radius: 1em;
+	border: 3px solid var(--violet-blue);
+	
+	transition-property: background width border-color; 
+	transition-duration: 0.2s;
+}
+
+.p-block-r .proj:hover {
+	border-color: var(--sky-blue);
+	width: 85%;
+	left: 7.5%; 
+}
+
 /* programming --> effects */ 
 .programming .logo:hover { 
     transform: scale(1.1);
@@ -235,13 +270,40 @@ div.programming {
 }
 
 /* programming --> text */
-.programming h1 {
+.p-block-l h1 {
 	font-size: max(4vw, 240%);
 }
 
-.programming h2 {
+.p-block-r h1 {
+	animation: topbox-pulse 5s ease-in-out 0s infinite alternate;
+	font-size: max(3vw, 180%);
+}
+
+.p-block-r h3 {
+	color: var(--black);
+	font-size: max(0.8vw, 95%); 
+}
+
+.p-block-r i {
+	font-size: max(0.8vw, 60%); 
+}
+
+.p-block-l h2, .p-block-r h2 {
 	color: var(--gunmetal);
 	font-size: max(1.2vw, 105%);
+}
+
+.p-block-r a {
+	text-decoration: none;
+	color: var(--gunmetal); 
+	transition-property: font-size color;
+	transition-duration: 0.2s;
+}
+
+/* programming --> text --> effects */
+.p-block-r a:hover {
+	color: var(--sky-blue); 
+	font-size: 1.2vw;
 }
 
 /* programming --> ids */
