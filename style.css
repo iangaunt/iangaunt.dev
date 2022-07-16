@@ -217,7 +217,6 @@ div.programming {
 	height: 60vh; 
 	position: absolute; 
 	left: 20%; 
-	height: 60vh; 
 	width: 60%
 }
 
@@ -253,7 +252,7 @@ div.programming {
 	border-radius: 1em;
 	border: 3px solid var(--violet-blue);
 	
-	transition-property: background width border-color; 
+	transition-property: width border-color; 
 	transition-duration: 0.2s;
 }
 
@@ -334,16 +333,29 @@ body, html, div.topnav {
 		padding: 2vw; 
 	}
 
-	.programming h1 {
-		font-size: 8vw; 
+	div.programming { height: 120vh; }
+
+	.programming .logo {
+		width: 75px; 
+		height: 75px; 
 	}
 
-	.programming h2 {
-		font-size: 3.6vw; 
+	.p-block-l, .p-block-r {
+		width: 100%;
+		height: 50%;  
 	}
-	
-	.programming .logo {
-		width: 13vw;
-		height: 13vw; 
+
+	.p-block-l { margin-bottom: -50px; }
+
+	.p-block-r .proj {
+		height: 10vw; 
+		width: 85%;
+	}
+
+	.p-block-r .proj:hover { width: 90%; }
+
+	.p-block-r a:hover {
+		color: var(--sky-blue); 
+		font-size: 4vw;
 	}
 }
