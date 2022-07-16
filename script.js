@@ -49,7 +49,8 @@ function styleMode() {
         "--white" : ["rgb(255, 255, 255)", "rgb(38, 40, 48)"],
         "--black" : ["rgb(4, 4, 3)", "rgb(255, 255, 255)"],
         "--gunmetal" : ["rgb(41, 47, 54)", "rgb(214, 207, 201)"],
-        "--black-tns" : ["rgba(4, 4, 3, 0.3)", "rgba(251, 251, 252, 0.3)"]
+        "--black-tns" : ["rgba(4, 4, 3, 0.3)", "rgba(251, 251, 252, 0.3)"],
+        "--grey-tns" : ["rgba(210, 210, 210, 0.5)", "rgba(30, 30, 30, 0.5)"]
     }
 
     // Apply individual color changes
@@ -68,3 +69,4 @@ function initTheme() {
     document.getElementById("mode-toggle").innerText = storedTheme; 
     styleMode(); 
 }; 
+

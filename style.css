@@ -17,8 +17,9 @@
     --glaucous: rgb(118, 129, 179); 
 
 	/* transparent colors */
-	--glaucous-tns: rgba(118, 129, 179, 0.3); 
 	--black-tns: rgba(4, 4, 3, 0.3); 
+	--glaucous-tns: rgba(118, 129, 179, 0.3); 
+	--grey-tns: rgba(210, 210, 210, 0.5);
 }
 
 /* > animations */
@@ -66,6 +67,10 @@ html {
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
 	-o-transform: translateY(-50%); 
+}
+
+.spacer {
+	height: 60vh; 
 }
 
 /* topnav */
@@ -136,6 +141,12 @@ div.topbox {
 	text-align: left;
 	right: 5%;  
 	font-size: max(2vw, 90%); 
+}
+
+/* topbox --> classes */
+.topbox .bg {
+	position: absolute;
+	width: 100%; height: 100%; left: 0%; 
 }
 
 /* > topbox --> text --> ids */
@@ -227,9 +238,9 @@ div.programming {
 	float: left
 }
 
-.p-block-l .logo {
-    width: clamp(90px, 95px, 100px); 
-    height: clamp(90px, 95px, 100px);  
+.p-block-l .logo, .tools .logo {
+    width: 75px;
+    height: 75px;
 
     transition-duration: 0.3s;
     -webkit-transition-property: transform;
@@ -314,6 +325,12 @@ div.programming {
 	color: var(--violet-blue); 
 }
 
+/* contact */
+div.contact {
+	height: 50vh; 
+	width: 80%; 
+}
+
 /* dark mode transition effects */
 body, html, div.topnav {
 	transition-property: background-color;
@@ -325,21 +342,9 @@ body, html, div.topnav {
 	.textdesc .centered::before {
 		width: 110%; left: -5%;
 	}
-}
-
-@media only screen and (max-width: 500px) {
-	.topnav a, .topnav button, .topnav #logo {
-		font-size: 3.2vw; 
-		padding: 2vw; 
-	}
 
 	div.programming { height: 120vh; }
-
-	.programming .logo {
-		width: 75px; 
-		height: 75px; 
-	}
-
+	
 	.p-block-l, .p-block-r {
 		width: 100%;
 		height: 50%;  
@@ -348,11 +353,31 @@ body, html, div.topnav {
 	.p-block-l { margin-bottom: -50px; }
 
 	.p-block-r .proj {
-		height: 10vw; 
+		height: 9vw; 
 		width: 85%;
 	}
 
 	.p-block-r .proj:hover { width: 90%; }
+}
+
+@media only screen and (max-width: 500px) {
+	.topbox h2, .topbox h3 { 
+		opacity: 0; 
+	}
+
+	.topbox h1 {
+		font-size: 8.3vw; 
+	}
+
+	.programming .logo {
+		width: 60px;
+		height: 60px; 
+	}
+
+	.topnav a, .topnav button, .topnav #logo {
+		font-size: 3.2vw; 
+		padding: 2vw; 
+	}
 
 	.p-block-r a:hover {
 		color: var(--sky-blue); 
