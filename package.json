@@ -7,7 +7,6 @@
         "lint-scss": "npx stylelint \"**/*.scss\"",
         "lint-tsc": "npx eslint .",
         "tsc": "tsc --watch",
-        
         "build": "npx webpack",
         "start": "webpack serve --port 3000",
         "deploy": "npm run build && gh-pages -d dist"

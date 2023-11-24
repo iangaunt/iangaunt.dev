@@ -24,7 +24,7 @@ $link-dark: rgb(22, 132, 205);
 
 * {
     font-family: "Barlow", sans-serif;
-    font-size: 40px;
+    font-size: 4vh;
     margin: 0;
     padding: 0;
     text-align: center;
@@ -39,6 +39,7 @@ main .container {
 
     background: linear-gradient(180deg, $bg 0%, $bg-dark 100%);
     height: 100vh;
+    overflow-x: hidden;
     width: 100vw;
 
     .icon {
@@ -46,23 +47,26 @@ main .container {
 
         aspect-ratio: 1;
         background: $y1-tns;
+        backface-visibility: hidden;
         color: rgb(255 255 255 / 0.2);
         font-weight: 300;
         height: 45vh;
         margin: -17vh;
         transform: rotateX(155deg) rotateY(130deg);
         transition-duration: 0.4s;
+        -webkit-backface-visibility: hidden;
 
         &:hover {
             background: $y1;
             color: black;
             margin-bottom: 20px;
-            transition-duration: 0.2s;
+            margin: 15px;
+            transition: background 0.2s, color 0.2s, margin-bottom 0.2s, margin 0.2s;
 
             .text {
                 text-shadow: -20px 5px 20px rgb(0 0 0 / 0.35);
                 transform: rotateX(180deg) rotateY(180deg) translateX(25px) translateY(-20px);
-                transition-duration: 0.2s;
+                transition: text-shadow 0.2s, transform 0.2s;
 
                 a {
                     color: $link;
@@ -84,6 +88,7 @@ main .container {
             right: 0px;
             position: absolute;
             transform: rotateX(180deg) rotateY(180deg);
+            white-space: nowrap;
             width: 250px;
         }
 
@@ -96,16 +101,16 @@ main .container {
                 color: rgb(255 255 255 / 0.2); 
                 font-size: 100%;
                 text-decoration: none; 
-                transition-duration: 0.2s;
+                transition: color 0.2s;
                 
                 &:hover {
                     color: $link-dark;
                 }
             }
             div { @include flex; height: 90px; }
-            h1 { font-weight: 800; font-size: 120%; line-height: 45px; margin-bottom: 20px }
-            h2 { font-weight: 400; font-size: 100%; line-height: 40px; }
-            p { font-weight: 400; font-size: 80%; line-height: 30px; }
+            h1 { font-weight: 800; font-size: 120%; line-height: 120%; margin-bottom: 20px }
+            h2 { font-weight: 400; font-size: 100%; line-height: 100%; }
+            p { font-weight: 400; font-size: 80%; line-height: 100%; }
         }
 
         &:hover ~ .icon {
@@ -132,5 +137,34 @@ main .container {
         &:hover {
             color: $link-dark;
         }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    * {
+        font-size: 2.8vh;
+    }
+
+    main .container {
+        .icon {
+            height: 30vh;
+            margin: -12vh;
+
+            &:hover{
+                .text {
+                    text-shadow: -10px 5px 10px rgb(0 0 0 / 0.35);
+                    transform: rotateX(180deg) rotateY(180deg) translateX(15px) translateY(-10px);
+                    transform: rotateX(180deg) rotateY(180deg) translateX(15px) translateY(-10px);
+                }
+            }
+
+            &::before {
+                width: 150px;
+            }
+        }
+    }
+
+    #caption {
+        font-size: 80%;
     }
 }

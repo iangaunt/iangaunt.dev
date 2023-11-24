@@ -7,7 +7,7 @@
   \*************************************************************************/
 * {
   font-family: "Barlow", sans-serif;
-  font-size: 40px;
+  font-size: 4vh;
   margin: 0;
   padding: 0;
   text-align: center;
@@ -25,6 +25,7 @@ main .container {
   align-items: center;
   background: linear-gradient(180deg, rgb(44, 56, 81) 0%, rgb(31, 40, 58) 100%);
   height: 100vh;
+  overflow-x: hidden;
   width: 100vw;
 }
 main .container .icon {
@@ -33,23 +34,26 @@ main .container .icon {
   align-items: center;
   aspect-ratio: 1;
   background: rgba(255, 209, 102, 0.15);
+  backface-visibility: hidden;
   color: rgba(255, 255, 255, 0.2);
   font-weight: 300;
   height: 45vh;
   margin: -17vh;
   transform: rotateX(155deg) rotateY(130deg);
   transition-duration: 0.4s;
+  -webkit-backface-visibility: hidden;
 }
 main .container .icon:hover {
   background: rgb(255, 209, 102);
   color: black;
   margin-bottom: 20px;
-  transition-duration: 0.2s;
+  margin: 15px;
+  transition: background 0.2s, color 0.2s, margin-bottom 0.2s, margin 0.2s;
 }
 main .container .icon:hover .text {
   text-shadow: -20px 5px 20px rgba(0, 0, 0, 0.35);
   transform: rotateX(180deg) rotateY(180deg) translateX(25px) translateY(-20px);
-  transition-duration: 0.2s;
+  transition: text-shadow 0.2s, transform 0.2s;
 }
 main .container .icon:hover .text a {
   color: rgb(52, 162, 235);
@@ -93,6 +97,7 @@ main .container .icon::before {
   right: 0px;
   position: absolute;
   transform: rotateX(180deg) rotateY(180deg);
+  white-space: nowrap;
   width: 250px;
 }
 main .container .icon .text {
@@ -104,7 +109,7 @@ main .container .icon .text a {
   color: rgba(255, 255, 255, 0.2);
   font-size: 100%;
   text-decoration: none;
-  transition-duration: 0.2s;
+  transition: color 0.2s;
 }
 main .container .icon .text a:hover {
   color: rgb(22, 132, 205);
@@ -118,18 +123,18 @@ main .container .icon .text div {
 main .container .icon .text h1 {
   font-weight: 800;
   font-size: 120%;
-  line-height: 45px;
+  line-height: 120%;
   margin-bottom: 20px;
 }
 main .container .icon .text h2 {
   font-weight: 400;
   font-size: 100%;
-  line-height: 40px;
+  line-height: 100%;
 }
 main .container .icon .text p {
   font-weight: 400;
   font-size: 80%;
-  line-height: 30px;
+  line-height: 100%;
 }
 main .container .icon:hover ~ .icon {
   opacity: 0.1;
@@ -152,6 +157,27 @@ main .container .icon:hover ~ .icon {
 }
 #caption a:hover {
   color: rgb(22, 132, 205);
+}
+
+@media screen and (max-width: 600px) {
+  * {
+    font-size: 2.8vh;
+  }
+  main .container .icon {
+    height: 30vh;
+    margin: -12vh;
+  }
+  main .container .icon:hover .text {
+    text-shadow: -10px 5px 10px rgba(0, 0, 0, 0.35);
+    transform: rotateX(180deg) rotateY(180deg) translateX(15px) translateY(-10px);
+    transform: rotateX(180deg) rotateY(180deg) translateX(15px) translateY(-10px);
+  }
+  main .container .icon::before {
+    width: 150px;
+  }
+  #caption {
+    font-size: 80%;
+  }
 }/*# sourceMappingURL=style.css.map */
 
 /*# sourceMappingURL=main.css.map*/
