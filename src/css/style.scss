@@ -1,0 +1,136 @@
+@import "https://fonts.googleapis.com/css2?family=Barlow:wght@100;300;400&display=swap";
+
+@mixin flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+$bg: rgb(44, 56, 81); 
+$bg-dark: rgb(31, 40, 58); 
+
+$y1: rgb(255, 209, 102);
+$y2: rgb(172, 210, 124);
+$g1: rgb(89, 213, 148);
+$g2: rgb(6, 214, 160);
+
+$y1-tns: rgb(255 209 102 / 0.15);
+$y2-tns: rgb(172 210 124 / 0.25);
+$g1-tns: rgb(89 213 148 / 0.35);
+$g2-tns: rgb(6 214 160 / 0.45);
+
+$link: rgb(52, 162, 235);
+$link-dark: rgb(22, 132, 205);
+
+* {
+    font-family: "Barlow", sans-serif;
+    font-size: 40px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+
+    &::selection {
+        background: rgba(47 137 255 / 0.2);
+    }
+}
+
+main .container {
+    @include flex;
+
+    background: linear-gradient(180deg, $bg 0%, $bg-dark 100%);
+    height: 100vh;
+    width: 100vw;
+
+    .icon {
+        @include flex;
+
+        aspect-ratio: 1;
+        background: $y1-tns;
+        color: rgb(255 255 255 / 0.2);
+        font-weight: 300;
+        height: 45vh;
+        margin: -17vh;
+        transform: rotateX(155deg) rotateY(130deg);
+        transition-duration: 0.4s;
+
+        &:hover {
+            background: $y1;
+            color: black;
+            margin-bottom: 20px;
+            transition-duration: 0.2s;
+
+            .text {
+                text-shadow: -20px 5px 20px rgb(0 0 0 / 0.35);
+                transform: rotateX(180deg) rotateY(180deg) translateX(25px) translateY(-20px);
+                transition-duration: 0.2s;
+
+                a {
+                    color: $link;
+                }
+            }
+        }
+
+        &:nth-of-type(2) { background: $y2-tns; &::before{ content: "Development" }; &:hover { background: $y2 }}
+        &:nth-of-type(3) { background: $g1-tns; &::before{ content: "Projects" }; &:hover { background: $g1 }}
+        &:nth-of-type(4) { background: $g2-tns; &::before{ content: "Contact" }; &:hover { background: $g2 }}
+
+        &::before {
+            @include flex;
+            bottom: -60px;
+            color: white;
+            content: "Ian Gaunt";
+            font-size: 120%;
+            height: 50px;
+            right: 0px;
+            position: absolute;
+            transform: rotateX(180deg) rotateY(180deg);
+            width: 250px;
+        }
+
+        .text {
+            transition-duration: 0.5s;
+            transform: rotateX(180deg) rotateY(180deg);
+            width: 80%;
+
+            a { 
+                color: rgb(255 255 255 / 0.2); 
+                font-size: 100%;
+                text-decoration: none; 
+                transition-duration: 0.2s;
+                
+                &:hover {
+                    color: $link-dark;
+                }
+            }
+            div { @include flex; height: 90px; }
+            h1 { font-weight: 800; font-size: 120%; line-height: 45px; margin-bottom: 20px }
+            h2 { font-weight: 400; font-size: 100%; line-height: 40px; }
+            p { font-weight: 400; font-size: 80%; line-height: 30px; }
+        }
+
+        &:hover ~ .icon {
+            opacity: 0.1;
+        }
+    }
+}
+
+#caption {
+    color: rgb(255 255 255 / 0.5);
+    font-size: 50%;
+    font-weight: 300;
+    left: 50%;
+    position: absolute;
+    top: 85%;
+    transform: translateX(-50%) translateY(-50%);
+
+    a {
+        color: $link;
+        font-size: 100%;
+        text-decoration: none;
+        transition: color 0.2s;
+
+        &:hover {
+            color: $link-dark;
+        }
+    }
+}

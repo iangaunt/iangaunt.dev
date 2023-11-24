@@ -1,5 +1,3 @@
-# portfolio: iangaunt.dev
+# iangaunt/iangaunt.dev
 
-iangaunt.dev is a hobby project of mine to create a more professional portfolio for future use. Maybe it's for work, maybe it's for showing friends, I don't really know. All I know is that I like to make websites and I needed an excuse to make one.
-
-Most of this website was custom built by me through vanilla HTML, CSS, and JavaScript. Some Animate.css and Mousetrap was thrown in there. 
+A website I made for a more professional profile. Built with React, Sass, and TypeScript in ~3 hours, from initial coloring to completion.
