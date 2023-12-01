@@ -6,85 +6,101 @@
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/css/style.css (1) ***!
   \*************************************************************************/
 * {
-  font-family: "Barlow", sans-serif;
+  font-family: Barlow, sans-serif;
   font-size: 4vh;
   margin: 0;
   padding: 0;
   text-align: center;
 }
-*::-moz-selection {
-  background: rgba(47, 137, 255, 0.2);
-}
+
 *::selection {
-  background: rgba(47, 137, 255, 0.2);
+  background: rgb(47 137 255 / 20%);
+}
+
+*::selection {
+  background: rgb(47 137 255 / 20%);
 }
 
 main .container {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(180deg, rgb(44, 56, 81) 0%, rgb(31, 40, 58) 100%);
+  background: linear-gradient(180deg, rgb(44 56 81) 0%, rgb(31 40 58) 100%);
   height: 100vh;
   overflow-x: hidden;
   width: 100vw;
 }
+
 main .container .icon {
   display: flex;
   justify-content: center;
   align-items: center;
   aspect-ratio: 1;
-  background: rgba(255, 209, 102, 0.15);
+  background: rgb(255 209 102 / 15%);
   backface-visibility: hidden;
-  color: rgba(255, 255, 255, 0.2);
+  color: rgb(255 255 255 / 20%);
   font-weight: 300;
   height: 45vh;
   margin: -17vh;
   transform: rotateX(155deg) rotateY(130deg);
   transition-duration: 0.4s;
-  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
+
 main .container .icon:hover {
-  background: rgb(255, 209, 102);
+  background: rgb(255 209 102);
   color: black;
   margin-bottom: 20px;
   margin: 15px;
   transition: background 0.2s, color 0.2s, margin-bottom 0.2s, margin 0.2s;
 }
+
 main .container .icon:hover .text {
-  text-shadow: -20px 5px 20px rgba(0, 0, 0, 0.35);
-  transform: rotateX(180deg) rotateY(180deg) translateX(25px) translateY(-20px);
+  text-shadow: -20px 5px 20px rgb(0 0 0 / 35%);
+  transform: rotateX(180deg) rotateY(180deg) translateX(15px) translateY(-10px);
   transition: text-shadow 0.2s, transform 0.2s;
 }
+
 main .container .icon:hover .text a {
-  color: rgb(52, 162, 235);
+  color: rgb(0 92 175);
 }
+
 main .container .icon:nth-of-type(2) {
-  background: rgba(172, 210, 124, 0.25);
+  background: rgb(172 210 124 / 25%);
 }
+
 main .container .icon:nth-of-type(2)::before {
   content: "Development";
 }
+
 main .container .icon:nth-of-type(2):hover {
-  background: rgb(172, 210, 124);
+  background: rgb(172 210 124);
 }
+
 main .container .icon:nth-of-type(3) {
-  background: rgba(89, 213, 148, 0.35);
+  background: rgb(89 213 148 / 35%);
 }
+
 main .container .icon:nth-of-type(3)::before {
   content: "Projects";
 }
+
 main .container .icon:nth-of-type(3):hover {
-  background: rgb(89, 213, 148);
+  background: rgb(89 213 148);
 }
+
 main .container .icon:nth-of-type(4) {
-  background: rgba(6, 214, 160, 0.45);
+  background: rgb(6 214 160 / 45%);
 }
+
 main .container .icon:nth-of-type(4)::before {
   content: "Contact";
 }
+
 main .container .icon:nth-of-type(4):hover {
-  background: rgb(6, 214, 160);
+  background: rgb(6 214 160);
 }
+
 main .container .icon::before {
   display: flex;
   justify-content: center;
@@ -94,90 +110,106 @@ main .container .icon::before {
   content: "Ian Gaunt";
   font-size: 120%;
   height: 50px;
-  right: 0px;
+  right: 0;
   position: absolute;
   transform: rotateX(180deg) rotateY(180deg);
   white-space: nowrap;
   width: 250px;
 }
+
 main .container .icon .text {
   transition-duration: 0.5s;
   transform: rotateX(180deg) rotateY(180deg);
   width: 80%;
 }
+
 main .container .icon .text a {
-  color: rgba(255, 255, 255, 0.2);
+  color: rgb(255 255 255 / 20%);
   font-size: 100%;
   text-decoration: none;
-  transition: color 0.2s;
+  transition: color 0.2s, text-shadow 0.4s;
 }
+
 main .container .icon .text a:hover {
-  color: rgb(22, 132, 205);
+  color: rgb(22 132 205);
+  text-shadow: 0 0 5px rgb(0 92 175);
 }
+
 main .container .icon .text div {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 90px;
 }
+
 main .container .icon .text h1 {
   font-weight: 800;
   font-size: 120%;
   line-height: 120%;
   margin-bottom: 20px;
 }
+
 main .container .icon .text h2 {
   font-weight: 400;
   font-size: 100%;
   line-height: 100%;
 }
+
 main .container .icon .text p {
   font-weight: 400;
   font-size: 80%;
   line-height: 100%;
 }
+
 main .container .icon:hover ~ .icon {
   opacity: 0.1;
 }
 
 #caption {
-  color: rgba(255, 255, 255, 0.5);
+  border: 1px rgb(255 255 255 / 30%) solid;
+  color: rgb(255 255 255 / 50%);
   font-size: 50%;
   font-weight: 300;
   left: 50%;
+  padding: 5px;
   position: absolute;
   top: 85%;
   transform: translateX(-50%) translateY(-50%);
 }
+
 #caption a {
-  color: rgb(52, 162, 235);
+  color: rgb(0 92 175);
   font-size: 100%;
   text-decoration: none;
   transition: color 0.2s;
 }
+
 #caption a:hover {
-  color: rgb(22, 132, 205);
+  color: rgb(22 132 205);
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (width <= 600px) {
   * {
     font-size: 2.8vh;
   }
+
   main .container .icon {
     height: 30vh;
     margin: -12vh;
   }
+
   main .container .icon:hover .text {
-    text-shadow: -10px 5px 10px rgba(0, 0, 0, 0.35);
-    transform: rotateX(180deg) rotateY(180deg) translateX(15px) translateY(-10px);
+    text-shadow: -10px 5px 10px rgb(0 0 0 / 35%);
     transform: rotateX(180deg) rotateY(180deg) translateX(15px) translateY(-10px);
   }
+
   main .container .icon::before {
     width: 150px;
   }
+
   #caption {
     font-size: 80%;
   }
-}/*# sourceMappingURL=style.css.map */
+}
 
 /*# sourceMappingURL=main.css.map*/
