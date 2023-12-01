@@ -6,31 +6,29 @@
     align-items: center;
 }
 
-$bg: rgb(44, 56, 81); 
-$bg-dark: rgb(31, 40, 58); 
+$bg: rgb(44 56 81); 
+$bg-dark: rgb(31 40 58); 
 
-$y1: rgb(255, 209, 102);
-$y2: rgb(172, 210, 124);
-$g1: rgb(89, 213, 148);
-$g2: rgb(6, 214, 160);
-
-$y1-tns: rgb(255 209 102 / 0.15);
-$y2-tns: rgb(172 210 124 / 0.25);
-$g1-tns: rgb(89 213 148 / 0.35);
-$g2-tns: rgb(6 214 160 / 0.45);
-
-$link: rgb(52, 162, 235);
-$link-dark: rgb(22, 132, 205);
+$y1: rgb(255 209 102);
+$y2: rgb(172 210 124);
+$g1: rgb(89 213 148);
+$g2: rgb(6 214 160);
+$y1-tns: rgb(255 209 102 / 15%);
+$y2-tns: rgb(172 210 124 / 25%);
+$g1-tns: rgb(89 213 148 / 35%);
+$g2-tns: rgb(6 214 160 / 45%);
+$link: rgb(0 92 175);
+$link-dark: rgb(22 132 205);
 
 * {
-    font-family: "Barlow", sans-serif;
+    font-family: Barlow, sans-serif;
     font-size: 4vh;
     margin: 0;
     padding: 0;
     text-align: center;
 
     &::selection {
-        background: rgba(47 137 255 / 0.2);
+        background: rgba(47 137 255 / 20%);
     }
 }
 
@@ -48,13 +46,12 @@ main .container {
         aspect-ratio: 1;
         background: $y1-tns;
         backface-visibility: hidden;
-        color: rgb(255 255 255 / 0.2);
+        color: rgb(255 255 255 / 20%);
         font-weight: 300;
         height: 45vh;
         margin: -17vh;
         transform: rotateX(155deg) rotateY(130deg);
         transition-duration: 0.4s;
-        -webkit-backface-visibility: hidden;
 
         &:hover {
             background: $y1;
@@ -64,8 +61,8 @@ main .container {
             transition: background 0.2s, color 0.2s, margin-bottom 0.2s, margin 0.2s;
 
             .text {
-                text-shadow: -20px 5px 20px rgb(0 0 0 / 0.35);
-                transform: rotateX(180deg) rotateY(180deg) translateX(25px) translateY(-20px);
+                text-shadow: -20px 5px 20px rgb(0 0 0 / 35%);
+                transform: rotateX(180deg) rotateY(180deg) translateX(15px) translateY(-10px);
                 transition: text-shadow 0.2s, transform 0.2s;
 
                 a {
@@ -80,12 +77,13 @@ main .container {
 
         &::before {
             @include flex;
+
             bottom: -60px;
             color: white;
             content: "Ian Gaunt";
             font-size: 120%;
             height: 50px;
-            right: 0px;
+            right: 0;
             position: absolute;
             transform: rotateX(180deg) rotateY(180deg);
             white-space: nowrap;
@@ -98,13 +96,14 @@ main .container {
             width: 80%;
 
             a { 
-                color: rgb(255 255 255 / 0.2); 
+                color: rgb(255 255 255 / 20%); 
                 font-size: 100%;
                 text-decoration: none; 
-                transition: color 0.2s;
+                transition: color 0.2s, text-shadow 0.4s;
                 
                 &:hover {
                     color: $link-dark;
+                    text-shadow: 0 0 5px $link;
                 }
             }
             div { @include flex; height: 90px; }
@@ -120,10 +119,12 @@ main .container {
 }
 
 #caption {
-    color: rgb(255 255 255 / 0.5);
+    border: 1px rgb(255 255 255 / 30%) solid;
+    color: rgb(255 255 255 / 50%);
     font-size: 50%;
     font-weight: 300;
     left: 50%;
+    padding: 5px;
     position: absolute;
     top: 85%;
     transform: translateX(-50%) translateY(-50%);
@@ -140,7 +141,7 @@ main .container {
     }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (width <= 600px) {
     * {
         font-size: 2.8vh;
     }
@@ -152,8 +153,7 @@ main .container {
 
             &:hover{
                 .text {
-                    text-shadow: -10px 5px 10px rgb(0 0 0 / 0.35);
-                    transform: rotateX(180deg) rotateY(180deg) translateX(15px) translateY(-10px);
+                    text-shadow: -10px 5px 10px rgb(0 0 0 / 35%);
                     transform: rotateX(180deg) rotateY(180deg) translateX(15px) translateY(-10px);
                 }
             }
