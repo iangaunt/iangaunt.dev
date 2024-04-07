@@ -44,6 +44,7 @@ main .container {
         @include flex;
 
         aspect-ratio: 1;
+        backdrop-filter: blur(4px);
         background: $y1-tns;
         backface-visibility: hidden;
         color: rgb(255 255 255 / 20%);
@@ -54,6 +55,7 @@ main .container {
         transition-duration: 0.4s;
 
         &:hover {
+            backdrop-filter: blur(0px);
             background: $y1;
             color: black;
             margin-bottom: 20px;
