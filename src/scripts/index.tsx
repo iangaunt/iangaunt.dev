@@ -39,7 +39,7 @@ createRoot(document.getElementById("main")).render((
                 <h2><a href={"https://github.com/iangaunt/shinyhunt"}>shinyhunt</a></h2>
                 <p>ShinyHunt is a website I designed to count shiny hunts for Pokemon.</p>
                 <br />
-                <h2><a href={"https://github.com/project-euler"}>project-euler</a></h2>
+                <h2><a href={"https://github.com/iangaunt/project-euler"}>project-euler</a></h2>
                 <p>My solutions to Project Euler and LeetCode DP problems (to help with DSA!!)</p>
             </div>
         )} />
