@@ -1,3 +1,10 @@
 {
-  "extends": ["next/core-web-vitals", "next/typescript"]
+	"extends": [
+		"next/core-web-vitals",
+		"next/typescript"
+	],
+	"rules": {
+		"@typescript-eslint/no-explicit-any": 0,
+		"react/no-unescaped-entities": 0
+	}
 }

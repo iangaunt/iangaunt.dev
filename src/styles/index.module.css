@@ -1,0 +1,86 @@
+@keyframes shift-margin {
+  from {
+    margin-left: 0px;
+  }
+  to {
+    margin-left: 3%;
+  }
+}
+.main {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  background-color: rgb(44, 56, 81);
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+}
+.main .title {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 8vw;
+  height: 20vw;
+  width: 60vw;
+}
+.main .title h1, .main .title h2 {
+  color: white;
+  font-stretch: ultra-expanded;
+  font-size: 10vw;
+  line-height: 80%;
+  margin: 0;
+  padding: 0;
+}
+.main .title h1 {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  animation: 8.6s ease-in-out infinite alternate shift-margin;
+  color: transparent;
+  justify-content: flex-start;
+  width: 100%;
+  -webkit-text-stroke: 0.25vw white;
+}
+.main .title h2 {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  animation: 11.4s ease-in-out infinite alternate shift-margin;
+  justify-content: flex-end;
+  width: 100%;
+}
+.main .bar {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 1vw;
+  margin-bottom: 1.5vw;
+  width: 60vw;
+}
+.main .bar div {
+  height: 100%;
+  width: 25%;
+}
+.main .bar .y1 {
+  background: rgb(255, 209, 102);
+  border-bottom-left-radius: 30px;
+  border-top-left-radius: 100px;
+}
+.main .bar .y2 {
+  background: rgb(172, 210, 124);
+}
+.main .bar .g1 {
+  background: rgb(89, 213, 148);
+}
+.main .bar .g2 {
+  background: rgb(6, 214, 160);
+  border-bottom-right-radius: 100px;
+  border-top-right-radius: 30px;
+}
+.main .description {
+  color: white;
+  font-size: 2vw;
+  font-stretch: expanded;
+  font-weight: 200;
+}/*# sourceMappingURL=index.module.css.map */

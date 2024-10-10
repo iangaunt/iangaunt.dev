@@ -2,7 +2,7 @@
     "files.exclude": {
         "node_modules": true,
 
-        ".eslintrc.json": true,
+        ".eslintrc.json": false,
         "next-env.d.ts": true,
         "next.config.mjs": true,
         "package-lock.json": true,
@@ -10,6 +10,8 @@
 
         "**/*.css.map": true,
         "**/*.css": true,
+        "**/_app.tsx": true,
+        "**/_document.tsx": true,
 
         ".next": true,
         ".idx": true

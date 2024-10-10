@@ -1,0 +1,128 @@
+$bg: rgb(44 56 81);
+
+$y1: rgb(255 209 102);
+$y2: rgb(172 210 124);
+$g1: rgb(89 213 148);
+$g2: rgb(6 214 160); 
+
+$link: rgb(0 92 175);
+$link-dark: rgb(22 132 205);
+
+@mixin flex {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+@keyframes color-wheel {
+    0% { color: $y1 }
+    25% { color: $y2 }
+    50% { color: $g1 }
+    75% { color: $g2 }
+    100% { color: $y1 }
+}
+
+.main {
+    @include flex;
+    background-color: $bg;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+
+    .container {
+        @include flex;
+        font-size: 1vw;
+        height: 40vw;
+        width: 70vw;
+
+        .textbar {
+            @include flex;
+            flex-direction: column;
+            height: 100%;
+            width: 50%;
+
+            a {
+                @include flex;
+
+                color: $link;
+                font-size: 2vw;
+                font-stretch: extra-expanded;
+                font-weight: 400;
+                text-decoration: none;
+                transition: color 0.3s, font-weight 0.3s;
+
+                &:hover {
+                    color: $link-dark;
+                    font-weight: 500;
+                }
+
+                .icon {
+                    margin-left: 1vw;
+                }
+            }
+
+            h1 {
+                @include flex;
+
+                animation: 8s ease-in-out infinite alternate color-wheel;
+                color: $y1;
+                font-size: 4vw;
+                font-stretch: ultra-expanded;
+                font-weight: 500;
+                margin-bottom: 1vw;
+                text-align: left;
+
+                .icon {
+                    margin-right: 1.5vw;
+                }
+            }
+
+            p {
+                color: white;
+                font-size: 2vw;
+                font-weight: 200;
+                width: 90%;
+            }
+
+            .iconbar {
+                @include flex;
+                margin: 2vw;
+                
+                .icon {
+                    color: white;
+                    height: 3vw;
+                    margin: 0.2vw;
+                    transition: color 0.2s, transform 0.25s;
+                    width: 3vw;
+
+                    &:hover {
+                        color: rgb(255 255 255 / 0.8);
+                        transform: rotateZ(10deg);
+                    }
+                }
+            }
+        }
+
+        .picture {
+            @include flex;
+            flex-direction: column;
+            height: 100%;
+            width: 50%;
+
+            .box {
+                aspect-ratio: 1;
+                background-color: rgb(255 255 255 / 0.2);
+                border-radius: 10px;
+                filter: saturate(100%) grayscale(80%);
+                margin: 2vw;
+                height: 90%;
+            }
+            
+            .listening {
+                color: white;
+                font-stretch: expanded;
+                font-weight: 200;
+            }
+        }
+    }
+}

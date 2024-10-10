@@ -1,6 +1,14 @@
+@keyframes link-pulse {
+  from {
+    color: rgb(52, 162, 235);
+  }
+  to {
+    color: rgb(30, 122, 205);
+  }
+}
 @font-face {
   font-family: "Mona Sans";
-  src: url("../MonaSans-Regular.ttf");
+  src: url("../MonaSans.woff2") format("woff2-variations");
 }
 * {
   font-family: "Mona Sans";
@@ -12,7 +20,7 @@
   align-items: center;
   display: flex;
   justify-content: center;
-  background: linear-gradient(90deg, rgba(22, 22, 25, 0.5) 0%, rgba(37, 37, 40, 0.5) 100%);
+  background: linear-gradient(90deg, rgb(31, 40, 58) 0%, rgba(31, 40, 58, 0.6) 100%);
   border-radius: 10px;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
   font-weight: 100;
@@ -24,7 +32,8 @@
   width: 80vw;
 }
 .navbar .idx {
-  color: rgb(198, 221, 255);
+  animation: 1.4s ease-in-out infinite alternate link-pulse;
+  font-family: "Courier New";
   font-size: 100%;
   font-weight: 100;
   margin-left: 2%;
@@ -58,17 +67,4 @@
 }
 .navbar a:visited {
   text-decoration: none;
-}
-
-body {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  background-color: rgb(45, 46, 49);
-  height: 100vh;
-  width: 100vw;
-}
-body p {
-  color: white;
-  font-size: 250%;
 }/*# sourceMappingURL=globals.css.map */
