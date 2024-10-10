@@ -4,7 +4,7 @@ export default function Help(): JSX.Element {
     return (
         <>
             <Navbar />
-            Hello from help page!
+            <p>Hello from help page!</p>
         </>
     );
 }

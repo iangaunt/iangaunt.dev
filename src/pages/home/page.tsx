@@ -4,7 +4,7 @@ export default function Home(): JSX.Element {
     return (
         <>
             <Navbar />
-            Hello from home page!
+            <p>Hello from home page!</p>
         </>
     );
 }

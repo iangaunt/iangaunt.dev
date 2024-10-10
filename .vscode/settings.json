@@ -8,6 +8,9 @@
         "package-lock.json": true,
         "tsconfig.json": true,
 
+        "**/*.css.map": true,
+        "**/*.css": true,
+
         ".next": true,
         ".idx": true
     }

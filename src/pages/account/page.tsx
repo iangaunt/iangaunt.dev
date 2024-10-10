@@ -4,7 +4,7 @@ export default function Account(): JSX.Element {
     return (
         <>
             <Navbar />
-            Hello from account page!
+            <p>Hello from account page!</p>
         </>
     );
 }
