@@ -28,7 +28,6 @@ export default function Spotify() {
     
     return (
         <>
-            <p className={styles.listening}>Here's what I'm currently listening to ...</p>
             <Album json={json} />
         </>
     )

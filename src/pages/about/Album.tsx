@@ -20,14 +20,17 @@ export default function Album(props: {json: any}) {
         const artistName = props.json.data.spotify.artist + " • " + props.json.data.spotify.album;
 
         return (
-            <div className={styles.spotify}>
-                <img alt="" className={styles.cover} src={props.json.data.spotify.album_art_url}></img>
-                <div className={styles.description}>
-                    <h1>{shorten(songName, true)}</h1>
-                    <h2>{shorten(artistName, false)}</h2>
-                    <Playback json={props.json} />
+            <>
+                <p className={styles.listening}>Here's what I'm currently listening to ...</p>
+                <div className={styles.spotify}>
+                    <img alt="" className={styles.cover} src={props.json.data.spotify.album_art_url}></img>
+                    <div className={styles.description}>
+                        <h1>{shorten(songName, true)}</h1>
+                        <h2>{shorten(artistName, false)}</h2>
+                        <Playback json={props.json} />
+                    </div>
                 </div>
-            </div>
+            </>
         )
     } else {
         return (<></>);

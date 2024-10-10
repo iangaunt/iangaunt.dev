@@ -1,3 +1,9 @@
+.listening {
+  color: white;
+  font-stretch: expanded;
+  font-weight: 200;
+}
+
 .spotify {
   align-items: center;
   display: flex;

@@ -8,7 +8,7 @@ export default function Resume() {
             <Navbar></Navbar>
             <main className={styles.main}>
                 <div className={styles.container}>
-                    <embed className="" src="http://marc.rawer.de/Gameboy/Docs/GBCPUman.pdf" type="application/pdf"></embed>
+                    <embed src="resume.pdf" type="application/pdf"></embed>
                 </div>
             </main>
         </>

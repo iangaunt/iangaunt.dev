@@ -70,7 +70,6 @@ $link-dark: rgb(22 132 205);
                 font-stretch: ultra-expanded;
                 font-weight: 500;
                 margin-bottom: 1vw;
-                text-align: left;
 
                 .icon {
                     margin-right: 1.5vw;
@@ -116,12 +115,6 @@ $link-dark: rgb(22 132 205);
                 filter: saturate(100%) grayscale(80%);
                 margin: 2vw;
                 height: 90%;
-            }
-            
-            .listening {
-                color: white;
-                font-stretch: expanded;
-                font-weight: 200;
             }
         }
     }

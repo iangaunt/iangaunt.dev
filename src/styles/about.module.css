@@ -68,7 +68,6 @@
   font-stretch: ultra-expanded;
   font-weight: 500;
   margin-bottom: 1vw;
-  text-align: left;
 }
 .main .container .textbar h1 .icon {
   margin-right: 1.5vw;
@@ -111,9 +110,4 @@
   filter: saturate(100%) grayscale(80%);
   margin: 2vw;
   height: 90%;
-}
-.main .container .picture .listening {
-  color: white;
-  font-stretch: expanded;
-  font-weight: 200;
 }/*# sourceMappingURL=about.module.css.map */
