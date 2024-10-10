@@ -12,7 +12,7 @@
   align-items: center;
   display: flex;
   justify-content: center;
-  background: linear-gradient(90deg, rgba(22, 22, 25, 0.5) 0%, rgba(32, 32, 35, 0.5) 100%);
+  background: linear-gradient(90deg, rgba(22, 22, 25, 0.5) 0%, rgba(37, 37, 40, 0.5) 100%);
   border-radius: 10px;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
   font-weight: 100;
