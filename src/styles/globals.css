@@ -30,11 +30,12 @@
   position: absolute;
   top: 5%;
   width: 80vw;
+  z-index: 100;
 }
 .navbar .idx {
   animation: 1.4s ease-in-out infinite alternate link-pulse;
   font-family: "Courier New";
-  font-size: 100%;
+  font-size: 1.5vw;
   font-weight: 100;
   margin-left: 2%;
   margin-right: 10%;
@@ -52,6 +53,7 @@
   border-color: transparent;
   border-style: solid;
   color: rgb(230, 230, 230);
+  font-size: 2vh;
   height: 60%;
   margin: 1%;
   text-decoration: none;

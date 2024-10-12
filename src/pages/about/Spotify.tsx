@@ -4,8 +4,6 @@
 import { useEffect, useState } from "react";
 import Album from "./Album"
 
-import styles from "@/styles/about.module.css"
-
 let data: any;
 
 export default function Spotify() {

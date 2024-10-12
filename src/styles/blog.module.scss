@@ -1,0 +1,104 @@
+$bg: rgb(44 56 81);
+$bg-dark: rgb(31 40 58); 
+
+$y1: rgb(255 209 102);
+$y2: rgb(172 210 124);
+$g1: rgb(89 213 148);
+$g2: rgb(6 214 160); 
+
+$link: rgb(0 92 175);
+$link-dark: rgb(22 132 205);
+
+@mixin flex {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.main {
+    @include flex;
+    background-color: $bg;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+
+    .container {
+        @include flex;
+        flex-direction: column;
+        font-size: 1vw;
+        position: relative;
+
+        .row {
+            @include flex;
+
+            .article-cont {
+                @include flex;
+                aspect-ratio: 2;
+                width: 40vw;
+                
+                .article {
+                    @include flex;
+            
+                    aspect-ratio: 2;
+                    border: 1px solid rgb(94 106 131);
+                    border-radius: 1vw;
+                    background-image: 
+                        linear-gradient(180deg, $bg 0%, transparent 100%);
+                    box-shadow: 0px 0px 80px rgb(0 0 0 / 0.3);
+                    flex-direction: column;
+                    margin: 1vw;
+                    overflow: hidden;
+                    position: relative;
+                    text-decoration: none;
+                    width: 40vw;
+            
+                    .content {
+                        @include flex;
+                        flex-direction: column;
+                        height: 80%;
+                        width: 80%;
+        
+                        .icon {
+                            margin-right: 1vw;
+                        }
+        
+                        h1 { 
+                            color: white;
+                            font-size: 3vw;
+                            font-weight: 500;
+                            text-align: left;
+                            width: 100%;
+                        }
+                
+                        p {
+                            font-size: 1.5vw;
+                            width: 100%;
+                            padding: 5px;
+                            opacity: 0.8;
+
+                            span {
+                                color: rgb(200 200 200);
+                                font-stretch: ultra-expanded;
+                            }
+                        }
+                    }
+        
+                    h2 {
+                        color: transparent;
+                        font-size: 5vw;
+                        font-stretch: ultra-condensed;
+                        left: 40%;
+                        position: relative;
+                        -webkit-text-stroke: 1px white;
+                    }
+                }
+        
+                p {
+                    color: white;
+                    font-size: 3vw;
+                    font-stretch: expanded;
+                }
+            }
+        }
+    }
+}
