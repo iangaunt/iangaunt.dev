@@ -18,7 +18,7 @@ export default function Blog() {
                                 title="chip8 emulation"
                                 body="A quick post about how I built a chip8 emulator from scratch with C++, SDL2, and Visual Studio Code."
                                 date="[10.11.24]"
-                                url="https://google.com/"
+                                url="/blog/articles/2024/blog"
                                 icon={<Icon icon="hugeicons:chip" />}
                                 iconColor={"rgb(255 209 102)"}
                             ></Article>

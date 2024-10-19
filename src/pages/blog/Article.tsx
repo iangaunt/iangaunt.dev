@@ -1,7 +1,8 @@
 import styles from "@/styles/blog.module.css"
+import Link from "next/link";
 import { ReactElement, useEffect, useRef, useState } from "react";
 
-const limit: number = 90;
+const limit: number = 80;
 
 function calculateRotation(x: number, y: number, el: DOMRect): string {
     if (el == null) return "";
@@ -51,7 +52,7 @@ export default function Article(props: {title: string, body: string, date: strin
                 })
             }}>
                 
-            <a href={props.url} className={styles.article} style={titleStyle}>
+            <Link href={props.url} className={styles.article} style={titleStyle}>
                 <div className={styles.content}>
                     <h1><>
                         <span className={styles.icon} style={{color: props.iconColor}}>{props.icon}</span>
@@ -60,7 +61,7 @@ export default function Article(props: {title: string, body: string, date: strin
                     <p><span>{props.date}</span> {props.body}</p>
                 </div>
                 <h2 style={arrowStyle}>→</h2>
-            </a>
+            </Link>
         </div>
     )
 }

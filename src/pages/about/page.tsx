@@ -32,7 +32,7 @@ export default function About() {
                             <a target="_blank" rel="noopener noreferrer" href="https://github.com/iangaunt/">Check out my GitHub! <Icon className={styles.icon} icon="mi:external-link" /></a>
                         </div>
                         <div className={styles.picture}>
-                            <img className={styles.box} src="https://cdn.discordapp.com/attachments/1050460522467840033/1294036973366939668/IMG_0366.jpg?ex=670aded8&is=67098d58&hm=e13f778b70d642c4c86b8e21b4ef8351c1a8439206773a2071c8a36deb34be86&"></img>
+                            <img className={styles.box} src="https://avatars.githubusercontent.com/u/66448861?v=4"></img>
                             <Spotify />
                         </div>
                     </div>
