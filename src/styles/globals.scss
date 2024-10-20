@@ -96,9 +96,26 @@ $link-dark: rgb(22 132 205);
 
 .blog-back {
     background: transparent;
-    color: white;
-    font-size: 4vw;
+    color: transparent;
+    font-size: 4vh;
     font-stretch: expanded;
     font-weight: 800;
+    margin-bottom: 2vh;
+    text-align: left;
     text-decoration: none;
+    transition: color 0.3s;
+    width: 100%;
+    -webkit-text-stroke: 1px white;
+
+    span {
+        transition: margin-right 0.3s;
+    }
+
+    &:hover {
+        color: white;
+        
+        span {
+            margin-right: 1vw;
+        }
+    }
 }

@@ -11,7 +11,7 @@
         "**/*.css.map": true,
         "**/*.css": true,
         "**/_app.tsx": true,
-        "**/_document.tsx": true,
+        // "**/_document.tsx": true,
 
         ".next": true,
         ".idx": true

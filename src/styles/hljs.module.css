@@ -1,0 +1,26 @@
+/*!
+  Theme: Default
+  Description: Original highlight.js style
+  Author: (c) Ivan Sagalaev <maniac@softwaremaniacs.org>
+  Maintainer: @highlightjs/core-team
+  Website: https://highlightjs.org/
+  License: see project LICENSE
+  Touched: 2021
+*/
+.codeblock {
+  border-radius: 2vh;
+  display: block;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 2vh;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin-bottom: 3vh;
+  margin-top: 3vh;
+  width: 100%;
+}
+.codeblock code {
+  font-family: "Courier New", Courier, monospace;
+}
+.codeblock code span {
+  font-family: "Courier New", Courier, monospace;
+}/*# sourceMappingURL=hljs.module.css.map */
