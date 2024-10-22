@@ -12,7 +12,7 @@ import cpp from "highlight.js/lib/languages/cpp";
 hljs.registerLanguage("cpp", cpp);
 
 export default function Codeblock(props: {code: string, language: string}) {
-    let lines: Array<string> = [];
+    const lines: Array<string> = [];
     let running = "";
     let reading = false;
 

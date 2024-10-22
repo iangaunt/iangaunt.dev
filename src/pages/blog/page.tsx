@@ -11,14 +11,14 @@ export default function Blog() {
         <>
             <Navbar></Navbar>
             <main className={styles.main}>
-                <Template>
+                <Template >
                     <div className={styles.container}>
                         <div className={styles.row}>
                             <Article 
                                 title="chip8 emulation"
                                 body="A quick post about how I built a chip8 emulator from scratch with C++, SDL2, and Visual Studio Code."
-                                date="[10.11.24]"
-                                url="/blog/articles/2024/blog"
+                                date="[10.21.24]"
+                                url="/blog/articles/2024/chip8"
                                 icon={<Icon icon="hugeicons:chip" />}
                                 iconColor={"rgb(255 209 102)"}
                             ></Article>
@@ -44,7 +44,7 @@ export default function Blog() {
                                 title="reading list"
                                 body="Here's a few textbooks I have my eyes on, or ones that I'm currently reading and working through."
                                 date="[10.11.24]"
-                                url="https://google.com/"
+                                url="/blog/articles/2024/reading"
                                 icon={<Icon icon="basil:book-open-solid" />}
                                 iconColor={"rgb(6 214 160)"}
                             ></Article>

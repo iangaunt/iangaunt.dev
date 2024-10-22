@@ -34,6 +34,10 @@ $link-dark: rgb(22 132 205);
     margin: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .navbar {
     @include flex;
 
@@ -44,7 +48,7 @@ $link-dark: rgb(22 132 205);
     height: 50px;
     left: 10vw;
     margin-bottom: 20px;
-    position: absolute;
+    position: fixed;
     top: 5%;
     width: 80vw;
     z-index: 100;

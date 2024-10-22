@@ -6,7 +6,7 @@ export default function Document() {
 			<Head>
 				<link
 					rel="stylesheet"
-					href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/hybrid.min.css"
+					href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark-dimmed.min.css"
 				/>
 			</Head>
 			<body>

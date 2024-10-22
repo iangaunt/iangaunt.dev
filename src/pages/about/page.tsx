@@ -11,7 +11,7 @@ export default function About() {
         <>
             <Navbar></Navbar>
             <main className={styles.main}>
-                <Template>
+                <Template >
                     <div className={styles.container}>
                         <div className={styles.textbar}>
                             <h1><Icon className={styles.icon} icon="lucide:terminal" /> Hi! I'm Ian.</h1>

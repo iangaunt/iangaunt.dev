@@ -7,7 +7,7 @@ export default function Landing() {
 		<>
 			<Navbar></Navbar>
 				<main className={styles.main}>
-					<Template>
+					<Template >
 						<div className={styles.title}>
 							<h1>IAN →</h1>
 							<h2>← GAUNT</h2>

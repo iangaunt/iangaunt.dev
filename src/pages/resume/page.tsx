@@ -8,7 +8,7 @@ export default function Resume() {
         <>
             <Navbar></Navbar>
             <main className={styles.main}>
-                <Template>
+                <Template >
                 <div className={styles.container}>
                     <embed src="https://www.elmhurst.edu/wp-content/uploads/2017/10/Elmhurst-College-Writing-An-Effective-Resume.pdf" type="application/pdf"></embed>
                 </div>
