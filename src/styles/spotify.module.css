@@ -70,4 +70,34 @@
 .time .timecode {
   margin: 2px;
   width: 5%;
+}
+
+@media screen and (max-width: 600px) {
+  .listening {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    font-size: 3vw;
+    white-space: nowrap;
+    width: 100%;
+  }
+  .spotify {
+    height: 100%;
+    width: 140%;
+  }
+  .spotify .cover {
+    height: 80%;
+  }
+  .spotify .description {
+    width: 100%;
+  }
+  .spotify .description h1 {
+    font-size: 4vw;
+  }
+  .spotify .description h2 {
+    font-size: 3vw;
+  }
+  .time .timecode {
+    font-size: 2vw;
+  }
 }/*# sourceMappingURL=spotify.module.css.map */

@@ -102,3 +102,28 @@ $link-dark: rgb(22 132 205);
         }
     }
 }
+
+@media screen and (max-width: 600px) {
+    .main .container .row {
+        flex-direction: column;
+
+        .article-cont {
+            width: 60vw;
+            margin: 0vw;
+
+            .article {
+                width: 60vw;
+
+                .content {
+                    h1 {
+                        font-size: 4.25vw;
+                    }
+
+                    p {
+                        font-size: 2.5vw;
+                    }
+                }
+            }
+        }
+    }
+}

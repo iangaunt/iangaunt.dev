@@ -110,4 +110,49 @@
   filter: saturate(100%) grayscale(80%);
   margin: 2vw;
   height: 90%;
+}
+
+@media screen and (max-width: 600px) {
+  .main .container {
+    flex-direction: column;
+    height: 60vh;
+    width: 80vw;
+  }
+  .main .container .textbar {
+    height: 50%;
+    margin: 4vh;
+    width: 75%;
+  }
+  .main .container .textbar h1 {
+    font-size: 8vw;
+  }
+  .main .container .textbar h1 .icon {
+    margin-right: 1.5vw;
+  }
+  .main .container .textbar p {
+    font-size: 4vw;
+    text-align: center;
+    width: 130%;
+  }
+  .main .container .textbar a {
+    font-size: 4vw;
+  }
+  .main .container .textbar .iconbar .icon {
+    color: white;
+    height: 5vw;
+    margin: 0.2vw;
+    transition: color 0.2s, transform 0.25s;
+    width: 5vw;
+  }
+  .main .container .textbar .iconbar .icon:hover {
+    color: rgba(255, 255, 255, 0.8);
+    transform: rotateZ(10deg);
+  }
+  .main .container .picture {
+    height: 20%;
+  }
+  .main .container .picture .box {
+    height: 0%;
+    margin: 2vh;
+  }
 }/*# sourceMappingURL=about.module.css.map */

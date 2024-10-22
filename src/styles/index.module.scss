@@ -91,3 +91,24 @@ $g2: rgb(6 214 160);
         font-weight: 200;
     }
 }
+
+@media screen and (max-width: 600px) {
+    .main {
+        .title {
+            height: 30vw;
+            width: 80vw;
+
+            h1, h2 {
+                font-size: 15vw
+            }
+        }
+
+        .bar {
+            width: 80vw;
+        }
+
+        .description {
+            font-size: 4vw;
+        }
+    }
+}

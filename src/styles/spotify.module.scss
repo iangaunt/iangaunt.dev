@@ -80,3 +80,38 @@
         width: 5%;
     }
 }
+
+@media screen and (max-width: 600px) {
+    .listening {
+        @include flex;
+        
+        font-size: 3vw;
+        white-space: nowrap;
+        width: 100%;
+    }
+
+    .spotify {
+        height: 100%;
+        width: 140%;
+
+        .cover {
+            height: 80%;
+        }
+
+        .description {
+            width: 100%;
+
+            h1 {
+                font-size: 4vw;
+            }
+
+            h2 {
+                font-size: 3vw;
+            }
+        }
+    }
+
+    .time .timecode {
+        font-size: 2vw;
+    }
+}

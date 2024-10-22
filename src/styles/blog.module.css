@@ -83,4 +83,23 @@
   color: white;
   font-size: 3vw;
   font-stretch: expanded;
+}
+
+@media screen and (max-width: 600px) {
+  .main .container .row {
+    flex-direction: column;
+  }
+  .main .container .row .article-cont {
+    width: 60vw;
+    margin: 0vw;
+  }
+  .main .container .row .article-cont .article {
+    width: 60vw;
+  }
+  .main .container .row .article-cont .article .content h1 {
+    font-size: 4.25vw;
+  }
+  .main .container .row .article-cont .article .content p {
+    font-size: 2.5vw;
+  }
 }/*# sourceMappingURL=blog.module.css.map */

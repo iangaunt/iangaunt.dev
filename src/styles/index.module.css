@@ -83,4 +83,20 @@
   font-size: 2vw;
   font-stretch: expanded;
   font-weight: 200;
+}
+
+@media screen and (max-width: 600px) {
+  .main .title {
+    height: 30vw;
+    width: 80vw;
+  }
+  .main .title h1, .main .title h2 {
+    font-size: 15vw;
+  }
+  .main .bar {
+    width: 80vw;
+  }
+  .main .description {
+    font-size: 4vw;
+  }
 }/*# sourceMappingURL=index.module.css.map */

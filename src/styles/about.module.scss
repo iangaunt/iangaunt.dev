@@ -119,3 +119,60 @@ $link-dark: rgb(22 132 205);
         }
     }
 }
+
+@media screen and (max-width: 600px) {
+    .main {
+        .container {
+            flex-direction: column;
+            height: 60vh;
+            width: 80vw;
+
+            .textbar {
+                height: 50%;
+                margin: 4vh;
+                width: 75%;
+
+                h1 {
+                    font-size: 8vw;
+
+                    .icon {
+                        margin-right: 1.5vw;
+                    }
+                }
+
+                p {
+                    font-size: 4vw;
+                    text-align: center;
+                    width: 130%;
+                }
+
+                a {
+                    font-size: 4vw;
+                }
+
+                .iconbar {      
+                    .icon {
+                        color: white;
+                        height: 5vw;
+                        margin: 0.2vw;
+                        transition: color 0.2s, transform 0.25s;
+                        width: 5vw;
+    
+                        &:hover {
+                            color: rgb(255 255 255 / 0.8);
+                            transform: rotateZ(10deg);
+                        }
+                    }
+                }
+            }
+
+            .picture {
+                height: 20%;
+                .box {
+                    height: 0%;
+                    margin: 2vh;
+                }
+            }
+        }
+    }
+}

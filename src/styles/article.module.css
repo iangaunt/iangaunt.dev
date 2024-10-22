@@ -66,13 +66,17 @@
   margin-top: 8vh;
   -webkit-text-stroke: 0.1vh white;
 }
-.main .container p {
+.main .container p, .main .container li {
   color: rgba(255, 255, 255, 0.8);
   font-size: 3vh;
   font-weight: 100;
   line-height: 4vh;
   margin-top: 1vh;
   margin-bottom: 1.25vh;
+}
+.main .container li {
+  margin-bottom: 2vh;
+  margin-top: 2vh;
 }
 .main .container footer {
   align-items: center;

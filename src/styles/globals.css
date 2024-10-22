@@ -39,7 +39,7 @@ html {
 .navbar .idx {
   animation: 1.4s ease-in-out infinite alternate link-pulse;
   font-family: "Courier New";
-  font-size: 1.5vw;
+  font-size: 2vh;
   font-weight: 100;
   margin-left: 2%;
   margin-right: 10%;
@@ -96,4 +96,14 @@ html {
 }
 .blog-back:hover span {
   margin-right: 1vw;
+}
+
+@media screen and (max-width: 600px) {
+  .navbar {
+    border-radius: 1vh;
+    height: 4%;
+  }
+  .navbar .idx, .navbar a {
+    font-size: 1.2vh;
+  }
 }/*# sourceMappingURL=globals.css.map */
