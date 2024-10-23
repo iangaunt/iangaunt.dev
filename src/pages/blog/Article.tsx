@@ -19,13 +19,14 @@ export default function Box(props: {title: string, body: string, date: string, u
     const containerRef = useRef<HTMLDivElement>(null);
     const [containerBox, setContainerBox] = useState(containerRef.current?.getBoundingClientRect());
 
+    const [link, setLink] = useState("https://www.google.com/");
+
     useEffect(() => {
         if (containerRef.current) {
             setContainerBox(containerRef.current.getBoundingClientRect());
         }
+        setLink(props.url != null ? props.url : "https://google.com/");
     }, []);
-
-    const link = props.url != null ? props.url : "https://google.com/";
 
     return (
         <div ref={containerRef} className={styles["article-cont"]} 

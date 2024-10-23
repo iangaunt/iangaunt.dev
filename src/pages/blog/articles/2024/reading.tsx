@@ -4,7 +4,7 @@ import Template from "@/pages/template";
 
 import styles from "@/styles/article.module.css"
 
-export default function Page() {
+export default function Reading() {
     return (
         <>
             <div className={styles.bg}></div>
