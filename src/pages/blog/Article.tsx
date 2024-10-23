@@ -1,6 +1,6 @@
 import styles from "@/styles/blog.module.css"
 import Link from "next/link";
-import { ReactElement, useEffect, useRef, useState } from "react";
+import { MouseEvent, ReactElement, useEffect, useRef, useState } from "react";
 
 const limit: number = 80;
 
@@ -12,7 +12,7 @@ function calculateRotation(x: number, y: number, el: DOMRect): string {
 	return "perspective(500px) " + "rotateX(" + calcX + "deg) " + "rotateY(" + calcY + "deg)";
 }
 
-export default function Article(props: {title: string, body: string, date: string, url: string, icon: ReactElement, iconColor: string}) {
+export default function Box(props: {title: string, body: string, date: string, url: string, icon: ReactElement, iconColor: string}) {
     const [titleStyle, setTitleStyle] = useState({});
     const [arrowStyle, setArrowStyle] = useState({});
 
@@ -25,12 +25,17 @@ export default function Article(props: {title: string, body: string, date: strin
         }
     }, []);
 
+    const link = props.url != null ? props.url : "https://google.com/";
+
     return (
         <div ref={containerRef} className={styles["article-cont"]} 
-            onMouseMove={(e) => {
+            onMouseMove={(e: MouseEvent | null) => {
+                const event = e;
+                if (event == null) return;
+
                 setTitleStyle({
                     background: "rgb(31 40 58)",
-                    transform: calculateRotation(e.clientX, e.clientY, containerBox!),
+                    transform: calculateRotation(event.clientX, event.clientY, containerBox!),
                     transitionDuration: "0.05s"
                 });
 
@@ -52,7 +57,8 @@ export default function Article(props: {title: string, body: string, date: strin
                 })
             }}>
                 
-            <Link href={props.url} className={styles.article} style={titleStyle}>
+            
+            <Link href={link} className={styles.article} style={titleStyle}>
                 <div className={styles.content}>
                     <h1><>
                         <span className={styles.icon} style={{color: props.iconColor}}>{props.icon}</span>
